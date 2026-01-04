@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap");
+
+:root{
+  /* GOLD PALETTE */
+  --gold-100:#f5e6b3;
+  --gold-300:#e6c46a;
+  --gold-500:#d4af37; /* classic gold */
+  --gold-700:#b8962e;
+  --gold-900:#7a5f1a;
+
+  /* DARK PALETTE */
+  --bg:#0b0b0b;
+  --bg-soft:#121212;
+  --bg-card:#161616;
+  --text:#f5f5f5;
+  --muted:#b0b0b0;
+  --border:#2a2a2a;
+
+  --radius:18px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(900px 400px at 90% -10%, rgba(212,175,55,.08), transparent 60%),
+    radial-gradient(700px 400px at 0% 30%, rgba(212,175,55,.06), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:2;
+}
+
+.page{ width:100%; }
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* TOP BAR */
+.topbar{
+  background:linear-gradient(90deg, #0b0b0b, #141414);
+  border-bottom:1px solid var(--border);
+}
+
+.brand-row{
+  display:flex;
+  align-items:center;
+  padding:18px 0;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:700;
+  color:var(--gold-500);
+}
+
+.brand small{
+  display:block;
+  font-weight:400;
+  color:var(--muted);
+}
+
+.brand-badge{
+  width:56px;
+  height:56px;
+  border-radius:8px;
+
+  /* LOGO ONLY — no background */
+  background: url("Asset 1200.png") center / contain no-repeat;
+
+  box-shadow:none;
+}
+
+
+/* HERO */
+.hero{
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,0.85),
+      rgba(212,175,55,0.35)
+    ),
+    url("copper-pipes.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+  max-width:720px;
+}
+
+.hero h1{
+  font-size:44px;
+  margin-bottom:16px;
+  color:var(--gold-500);
+  text-shadow:0 6px 22px rgba(0,0,0,0.9);
+}
+
+.tagline{
+  font-size:18px;
+  color:#e6e6e6;
+  max-width:650px;
+  margin-bottom:28px;
+}
+
+/* BUTTONS */
+.cta{
+  display:flex;
+  gap:14px;
+}
+
+.btn{
+  padding:14px 22px;
+  border-radius:16px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  color:#0b0b0b;
+  box-shadow:0 10px 25px rgba(212,175,55,.45);
+}
+
+.btn.primary:hover{
+  background:linear-gradient(135deg, var(--gold-700), var(--gold-500));
+}
+
+.btn.ghost{
+  border:1px solid rgba(212,175,55,.6);
+  color:var(--gold-300);
+}
+
+.btn.ghost:hover{
+  background:rgba(212,175,55,.08);
+}
+
+/* SECTIONS */
+.section{
+  padding:72px 0;
+  background:var(--bg-soft);
+}
+
+.section.alt{
+  background:linear-gradient(180deg, #0e0e0e, #161616);
+}
+
+h2{
+  font-size:30px;
+  margin-bottom:24px;
+  color:var(--gold-500);
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.service-card{
+  background:linear-gradient(180deg, #161616, #101010);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+.service-card h3{
+  color:var(--gold-300);
+}
+
+/* CONTACT */
+.contact{
+  background:linear-gradient(180deg, #161616, #101010);
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:22px;
+  background:#0b0b0b;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:34px;}
+  .cta{flex-direction:column;}
+}
